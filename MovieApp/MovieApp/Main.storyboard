@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -32,6 +33,9 @@
                                 <state key="normal" title="즐겨찾기" image="starFilled">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vQD-UN-Bq3" kind="show" id="oT4-l5-UzO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vaC-hk-MqH">
                                 <rect key="frame" x="20" y="99" width="374" height="34"/>
@@ -84,9 +88,79 @@
             </objects>
             <point key="canvasLocation" x="-30" y="115"/>
         </scene>
+        <!--Fovorite View Controller-->
+        <scene sceneID="KJK-XB-tsr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQc-hH-ypv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController modalPresentationStyle="fullScreen" id="vQD-UN-Bq3" customClass="FovoriteViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cfs-a0-wub">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겨찾기 목록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofX-Oc-wQJ">
+                                <rect key="frame" x="138.5" y="54" width="137" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4M-fY-Z0D">
+                                <rect key="frame" x="20" y="54.5" width="22" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTouched:" destination="vQD-UN-Bq3" eventType="touchUpInside" id="ISS-nT-FHF"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="urh-aR-jEH" customClass="MovieCollectionView" customModule="MovieApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="99" width="374" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PEr-8K-eqT">
+                                    <size key="itemSize" width="362" height="115"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="1JM-Qi-LEf">
+                                        <rect key="frame" x="6" y="0.0" width="362" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dcn-7U-QFQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="362" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="362" height="115"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gDI-sC-DVG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ofX-Oc-wQJ" firstAttribute="centerX" secondItem="cfs-a0-wub" secondAttribute="centerX" id="B3f-As-3mt"/>
+                            <constraint firstItem="h4M-fY-Z0D" firstAttribute="leading" secondItem="gDI-sC-DVG" secondAttribute="leading" constant="20" id="QGE-ky-d5Z"/>
+                            <constraint firstItem="urh-aR-jEH" firstAttribute="top" secondItem="ofX-Oc-wQJ" secondAttribute="bottom" constant="15" id="QvL-CD-zpW"/>
+                            <constraint firstItem="ofX-Oc-wQJ" firstAttribute="top" secondItem="gDI-sC-DVG" secondAttribute="top" constant="10" id="XmP-bh-KzL"/>
+                            <constraint firstItem="gDI-sC-DVG" firstAttribute="trailing" secondItem="urh-aR-jEH" secondAttribute="trailing" constant="20" id="jh5-IJ-YJs"/>
+                            <constraint firstItem="urh-aR-jEH" firstAttribute="leading" secondItem="gDI-sC-DVG" secondAttribute="leading" constant="20" id="mfP-ZJ-VRr"/>
+                            <constraint firstItem="gDI-sC-DVG" firstAttribute="bottom" secondItem="urh-aR-jEH" secondAttribute="bottom" id="n1A-Hi-Rfs"/>
+                            <constraint firstItem="h4M-fY-Z0D" firstAttribute="centerY" secondItem="ofX-Oc-wQJ" secondAttribute="centerY" id="sas-L9-W4G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteCollectionView" destination="urh-aR-jEH" id="6gN-oZ-9rw"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1016" y="-117"/>
+        </scene>
     </scenes>
     <resources>
         <image name="starFilled" width="21" height="21"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
