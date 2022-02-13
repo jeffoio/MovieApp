@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="movieCollectionView" destination="Jhi-HU-New" id="OM1-k0-E59"/>
                         <outlet property="noResultLabel" destination="aMY-Cd-pIf" id="eDT-Xx-hDc"/>
+                        <outlet property="seacrhTextField" destination="vaC-hk-MqH" id="Qp1-TS-fEd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,8 +101,7 @@
         <!--Detail View Controller-->
         <scene sceneID="pMu-ZY-YPb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cL0-hV-wiy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="8QG-ae-Kc8" customClass="DetailViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" modalPresentationStyle="fullScreen" id="8QG-ae-Kc8" customClass="DetailViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MrE-3j-tby">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,6 +121,7 @@
                                     <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonTouched:" destination="8QG-ae-Kc8" eventType="touchUpInside" id="Bet-Hi-DVJ"/>
                                     <action selector="backButtonTouched:" destination="vQD-UN-Bq3" eventType="touchUpInside" id="Sv8-NJ-5M6"/>
                                 </connections>
                             </button>
@@ -234,13 +235,13 @@
                         <outlet property="webView" destination="x8E-KZ-NMH" id="nzf-za-qu3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cL0-hV-wiy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="875" y="558"/>
         </scene>
         <!--Fovorite View Controller-->
         <scene sceneID="KJK-XB-tsr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QQc-hH-ypv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="fullScreen" id="vQD-UN-Bq3" customClass="FovoriteViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cfs-a0-wub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -303,6 +304,7 @@
                         <outlet property="favoriteCollectionView" destination="urh-aR-jEH" id="6gN-oZ-9rw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQc-hH-ypv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="-118"/>
         </scene>
