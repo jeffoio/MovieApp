@@ -31,7 +31,7 @@
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="즐겨찾기" image="starFilled">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="vQD-UN-Bq3" kind="show" id="oT4-l5-UzO"/>
@@ -125,7 +125,7 @@
                                     <action selector="backButtonTouched:" destination="vQD-UN-Bq3" eventType="touchUpInside" id="Sv8-NJ-5M6"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SBs-zN-glM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SBs-zN-glM">
                                 <rect key="frame" x="20" y="99" width="69" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SBs-zN-glM" secondAttribute="height" multiplier="1:1.3" id="LsW-s6-x08"/>
@@ -134,17 +134,17 @@
                             </imageView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8E-KZ-NMH">
                                 <rect key="frame" x="0.0" y="194" width="414" height="668"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="40s-fa-4k9">
-                                <rect key="frame" x="94" y="110" width="204.5" height="68"/>
+                                <rect key="frame" x="94" y="110" width="278.5" height="68"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-dX-eUh">
-                                        <rect key="frame" x="0.0" y="0.0" width="204.5" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="278.5" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="252" horizontalCompressionResistancePriority="749" text="감독:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esg-dC-uhP">
                                                 <rect key="frame" x="0.0" y="0.0" width="26.5" height="16"/>
@@ -152,8 +152,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasadfsdfsdfsd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMY-bu-ohe">
-                                                <rect key="frame" x="31.5" y="0.0" width="173" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMY-bu-ohe">
+                                                <rect key="frame" x="31.5" y="0.0" width="247" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -161,7 +161,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VYg-Vc-c8b">
-                                        <rect key="frame" x="0.0" y="26" width="204.5" height="16"/>
+                                        <rect key="frame" x="0.0" y="26" width="278.5" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="출연:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pP-EE-hqh">
                                                 <rect key="frame" x="0.0" y="0.0" width="26.5" height="16"/>
@@ -169,8 +169,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgr-Kj-8gS">
-                                                <rect key="frame" x="31.5" y="0.0" width="173" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="test Long long long long long long sentence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgr-Kj-8gS">
+                                                <rect key="frame" x="31.5" y="0.0" width="247" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -178,7 +178,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IpL-ep-96O">
-                                        <rect key="frame" x="0.0" y="52" width="204.5" height="16"/>
+                                        <rect key="frame" x="0.0" y="52" width="278.5" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="평점:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdu-gc-JoJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="26.5" height="16"/>
@@ -186,8 +186,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasdasdasdasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-gB-zcH">
-                                                <rect key="frame" x="31.5" y="0.0" width="173" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-gB-zcH">
+                                                <rect key="frame" x="31.5" y="0.0" width="247" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -215,7 +215,7 @@
                             <constraint firstAttribute="trailing" secondItem="x8E-KZ-NMH" secondAttribute="trailing" id="5Wi-GM-qjd"/>
                             <constraint firstItem="40s-fa-4k9" firstAttribute="leading" secondItem="SBs-zN-glM" secondAttribute="trailing" constant="5" id="8Tt-Rg-PgS"/>
                             <constraint firstItem="40s-fa-4k9" firstAttribute="centerY" secondItem="SBs-zN-glM" secondAttribute="centerY" id="Crx-iu-7ng"/>
-                            <constraint firstItem="rxG-fm-iEd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="40s-fa-4k9" secondAttribute="trailing" id="PEL-eV-MUf"/>
+                            <constraint firstItem="rxG-fm-iEd" firstAttribute="leading" secondItem="40s-fa-4k9" secondAttribute="trailing" id="PEL-eV-MUf"/>
                             <constraint firstItem="knf-WH-G6R" firstAttribute="width" relation="lessThanOrEqual" secondItem="MrE-3j-tby" secondAttribute="width" multiplier="0.7" id="SrC-wr-QK1"/>
                             <constraint firstItem="SBs-zN-glM" firstAttribute="top" secondItem="knf-WH-G6R" secondAttribute="bottom" constant="15" id="den-me-V0Q"/>
                             <constraint firstItem="cfz-CH-Vr3" firstAttribute="bottom" secondItem="x8E-KZ-NMH" secondAttribute="bottom" id="lPk-3g-CZv"/>
@@ -231,7 +231,8 @@
                         <outlet property="directorLabel" destination="iMY-bu-ohe" id="dqo-FQ-jBJ"/>
                         <outlet property="favoriteButton" destination="rxG-fm-iEd" id="foP-qK-leK"/>
                         <outlet property="ratingLabel" destination="45Z-gB-zcH" id="6ya-tQ-MhW"/>
-                        <outlet property="thubnailImageView" destination="SBs-zN-glM" id="xn0-TM-XMl"/>
+                        <outlet property="thumbnailImageView" destination="SBs-zN-glM" id="xn0-TM-XMl"/>
+                        <outlet property="titleLabel" destination="knf-WH-G6R" id="ce2-YP-ugV"/>
                         <outlet property="webView" destination="x8E-KZ-NMH" id="nzf-za-qu3"/>
                     </connections>
                 </viewController>
@@ -239,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="875" y="558"/>
         </scene>
-        <!--Fovorite View Controller-->
+        <!--Favorite View Controller-->
         <scene sceneID="KJK-XB-tsr">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vQD-UN-Bq3" customClass="FovoriteViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="vQD-UN-Bq3" customClass="FavoriteViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cfs-a0-wub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,6 +315,9 @@
         <image name="starFilled" width="21" height="21"/>
         <image name="starUnfilled" width="21.5" height="21"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
