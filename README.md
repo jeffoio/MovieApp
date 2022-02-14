@@ -26,7 +26,7 @@ UserDefaults를 사용해 즐겨찾기 영화를 저장, 상세화면으로 이�
 
 
 ## 프로젝트 구조 및  구현
-디렉토리 구조
+### 디렉토리 구조
 ```
 🗂 Presentation
     - ViewController.swift
@@ -51,13 +51,15 @@ UserDefaults를 사용해 즐겨찾기 영화를 저장, 상세화면으로 이�
 Info.plist
 ```
 <br/>
-ViewController 흐름
+
+### ViewController 흐름
 <img src="https://user-images.githubusercontent.com/38883364/153873682-b5edef7a-edad-4e9b-84ab-8183223b8531.png">
 
-프로젝트 구조
+### 프로젝트 구조
 MVVM 구조를 채택해 Viewmodel이 소유하는 영화 모델이 변경되면 View 업데이트
 <img src="https://user-images.githubusercontent.com/38883364/153875626-19262388-352b-4d8a-b7db-8e67836362b6.png">
 
+### 주요 객체 역할
 | 객체  |  역할 |
 |---|---|
 | [MainViewController](./MovieApp/MovieApp/Presentation/MainViewController.swift)  | 영화 검색 결과 목록 표시  |
