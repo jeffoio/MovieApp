@@ -34,7 +34,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vQD-UN-Bq3" kind="show" id="oT4-l5-UzO"/>
+                                    <action selector="presentFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OSm-tr-h4s"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vaC-hk-MqH">
@@ -243,7 +243,7 @@
         <!--Favorite View Controller-->
         <scene sceneID="KJK-XB-tsr">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vQD-UN-Bq3" customClass="FavoriteViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteViewController" modalPresentationStyle="fullScreen" id="vQD-UN-Bq3" customClass="FavoriteViewController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cfs-a0-wub">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
