@@ -19,6 +19,10 @@ final class MovieUsecase: MoviesUsecaseInterface {
     }
     
     func query(_ query: String, completion: @escaping (Result<[Movie], Error>) -> Void) {
+        guard !query.isEmpty else {
+            completion(.success([]))
+            return
+        }
         self.repository.query(query: query) { result in
             switch result {
             case .success(let movies):
