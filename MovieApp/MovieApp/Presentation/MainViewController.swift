@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var movieCollectionView: UICollectionView!
     @IBOutlet private weak var noResultLabel: UILabel!
     
-    private var viewModel = MainViewModel(useCase: MovieUsecase())
+    private var viewModel = MainViewModel(useCase: MovieUsecase(repository: MovieRepository(transferService: TransferService(networkService: NetworkAPI()))))
     private var dataSource: UICollectionViewDiffableDataSource<Section, Movie>?
     
     override func viewDidLoad() {
@@ -20,6 +20,11 @@ class MainViewController: UIViewController {
         self.bind()
         self.configureDelegates()
         self.configureMovieCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.movieCollectionView.reloadData()
     }
     
     private func bind() {
@@ -49,11 +54,11 @@ class MainViewController: UIViewController {
     
     private func configureDataSource() {
         self.dataSource = UICollectionViewDiffableDataSource<Section, Movie>(collectionView: self.movieCollectionView,
-                                                                             cellProvider: { collectionView, indexPath, itemIdentifier in
+                                                                             cellProvider: { collectionView, indexPath, movie in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.identifer, for: indexPath) as? MovieCell
-            let url = URL(string: "https://ssl.pstatic.net/imgmovie/mdi/mit110/1641/164192_P45_134107.jpg")
-            let data = try! Data(contentsOf: url!)
-            cell?.thumbnailImageView.image = UIImage(data: data)
+            cell?.update(movie) { [weak self] state in
+                self?.viewModel.updateFavorite(movie, state: state)
+            }
             return cell
         })
     }
@@ -62,6 +67,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let queryString = textField.text else { return true }
+        self.movieCollectionView.setContentOffset(.zero, animated: true)
         self.viewModel.query(queryString)
         self.seacrhTextField.resignFirstResponder()
         return true
@@ -71,10 +77,15 @@ extension MainViewController: UITextFieldDelegate {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let detailViewController = self.storyboard?.instantiateViewController(identifier: DetailViewController.identifider, creator: { coder in
-            return DetailViewController(coder: coder)
+            return DetailViewController(coder: coder, movie: self.dataSource?.itemIdentifier(for: indexPath))
         }) else {
             fatalError("Failed to load DetailViewController from storyboard.")
         }
         self.present(detailViewController, animated: false, completion: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let movieCell = cell as? MovieCell else { return }
+        movieCell.cancel()
     }
 }

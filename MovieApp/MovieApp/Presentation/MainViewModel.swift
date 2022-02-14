@@ -30,4 +30,8 @@ final class MainViewModel {
             }
         }
     }
+    
+    func updateFavorite(_ movie: Movie, state: Bool) {
+        FavoriteManager.shared.updateFavorite(movie, state: state)
+    }
 }
