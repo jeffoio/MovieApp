@@ -8,10 +8,22 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
+    static let identifider = String(describing: FavoriteViewController.self)
+
     @IBOutlet private weak var favoriteCollectionView: MovieCollectionView!
     
     private var dataSource: UICollectionViewDiffableDataSource<Section, Movie>?
-    private let viewModel: FavoriteModel = FavoriteModel()
+    private let viewModel: FavoriteModel
+    
+    init?(coder: NSCoder, viewModel: FavoriteModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

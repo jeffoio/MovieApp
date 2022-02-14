@@ -62,6 +62,16 @@ class MainViewController: UIViewController {
             return cell
         })
     }
+    
+    @IBAction func presentFavorite(_ sender: UIButton) {
+        guard let favoriteViewController = self.storyboard?.instantiateViewController(identifier: FavoriteViewController.identifider, creator: { coder in
+            let viewModel = FavoriteModel()
+            return FavoriteViewController(coder: coder, viewModel: viewModel)
+        }) else {
+            fatalError("Failed to load DetailViewController from storyboard.")
+        }
+        self.present(favoriteViewController, animated: false, completion: nil)
+    }
 }
 
 extension MainViewController: UITextFieldDelegate {
